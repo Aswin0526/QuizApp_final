@@ -1,0 +1,34 @@
+{
+    "quizcard" : [
+        {
+          "id": 1,
+          "title": "General Knowledge Quiz",
+          "description": "Test your knowledge with our general knowledge quiz. Challenge yourself and see how much you know!",
+          "image": "https://imgs.search.brave.com/SBCSjFyhC7gHyJVac8CDcxD4m63rZIy_gYyGSkobz_Y/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly90NC5m/dGNkbi5uZXQvanBn/LzAyLzgyLzYyLzAx/LzM2MF9GXzI4MjYy/MDEwMF9mSE13bjlj/U0xsUHBsRWswSHpp/N3ZQRlZocDd6NkVH/Yy5qcGc",
+          "href": "quiz-details.html?id=1"
+        },
+        {
+          "id": 2,
+          "title": "Science Quiz",
+          "description": "Explore the wonders of science with our detailed science quiz. Perfect for science enthusiasts!",
+          "image": "https://imgs.search.brave.com/bQdCBQhhMH_G_6_BpYxf464qAX1otCtNX5xpWZJkbXU/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvNjQy/Mzc2MjE2L3Bob3Rv/L211bHRpLWV0aG5p/Yy10ZWFjaGVyLWFu/ZC1jaGlsZHJlbi1p/bi1zY2llbmNlLWxh/Yi5qcGc_cz02MTJ4/NjEyJnc9MCZrPTIw/JmM9NGFFa3VwTkw1/M0FsX0U0bEY0TUV6/ZHV5ejl2czRHblUz/c2NKSWx5U0Mxcz0",
+          "href": "quiz-details.html?id=2"
+        },
+        {
+          "id": 3,
+          "title": "History Quiz",
+          "description": "Dive into the past with our history quiz. Test your knowledge of historical events and figures.",
+          "image": "https://imgs.search.brave.com/EC7kV9S4dBmBQZeKuxX8HURYwuBauLB13vVQHFZ2xvg/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzA2Lzk0Lzg5Lzgw/LzM2MF9GXzY5NDg5/ODA0NF95ZzdJYnpr/Z3ptODE3Z1FnR2RW/WWV0YW5PMm9Vc3lw/ZS5qcGc",
+          "href": "quiz-details.html?id=3"
+        },
+        {
+          "id": 4,
+          "title": "Geography Quiz",
+          "description": "Challenge your understanding of the world with our geography quiz. From continents to capitals, test your geographical knowledge.",
+          "image": "https://imgs.search.brave.com/3i8xQXhb9jSTRZZVleH7sxdegzjc8LWGtdm8QpKVlbM/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/YnJpdGFubmljYS5j/b20vNzYvMTU1ODc2/LTEzMS0wRjE3OUI5/NS9zZWEtTWVkaXRl/cnJhbmVhbi12aWV3/LUFudGFseWEtVHVy/a2V5LmpwZz93PTQw/MCZoPTIyNSZjPWNy/b3A",
+          "href": "quiz-details.html?id=4"
+        }
+      ]
+    
+    }
+      

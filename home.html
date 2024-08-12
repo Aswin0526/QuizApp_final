@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="home.css" />
+    <link
+      href="https://unpkg.com/boxicons@latest/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  </head>
+  <body>
+    <!-- HEADER-START -->
+    <header
+      class="header"
+      data-aos="fade-down"
+      data-aos-duration="1000"
+      data-aos-easing="ease-in-out"
+    >
+      <div class="logo">
+        <a href="#">
+          <img
+            src="https://imgs.search.brave.com/jB4UOJ2VlE-NCakUgcnJFHDAaOvr2ZBkTaT-QxmdGiU/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9weXBp/LWNhbW8uZnJlZXRs/cy5mYXN0bHkubmV0/LzM1Mzc4NTlkYmFj/YzgwNzcxODhiMDIz/MTNiYTkzNzBlMjg3/ZTUyYjAvNjg3NDc0/NzA3MzNhMmYyZjY3/Njk3NDY4NzU2MjJl/NjM2ZjZkMmY3NTZj/NzQ3MjYxNmM3OTc0/Njk2MzczMmY2MTcz/NzM2NTc0NzMyZjcy/NjE3NzJmNmQ2MTY5/NmUyZjcwNjE3Mjc0/NmU2NTcyNzMyZjZj/NmY2NzZmMmQ3MjZm/NjI2ZjY2NmM2Zjc3/MmU3MDZlNjc.jpeg"
+            alt="Logo"
+          />
+        </a>
+      </div>
+      <nav class="navbar">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#whyus">Why Us</a></li>
+          <li><a href="quiz.html">Quizzes</a></li>
+          <li><a onclick="showContactForm()">Contact Us</a></li>
+        </ul>
+      </nav>
+    </header>
+    <!-- HEADER-END -->
+
+    <div style="position: relative; top: 170px" class="content">
+      <!-- BANNER-START -->
+
+      <div
+        class="banner"
+        data-aos="fade-down"
+        data-aos-duration="1000"
+        data-aos-easing="ease-in-out"
+      >
+        <div class="headlines">
+          <h1
+            data-aos="fade-right"
+            data-aos-duration="1500"
+            data-aos-easing="ease-in-out"
+          >
+            Ready, Set, Quiz! <br />
+            Dive into Fun and Learning!
+          </h1>
+          <center>
+            <button
+              data-aos="fade-left"
+              data-aos-duration="1500"
+              data-aos-easing="ease-in-out"
+            >
+              <a href="quiz.html">START NOW</a>
+            </button>
+          </center>
+        </div>
+        <div class="headimg"></div>
+      </div>
+
+      <!-- BANNER-END -->
+
+      <!-- ABOUT-US-START -->
+      <!-- ABOUT-US-END -->
+
+      <!-- WHY-US-START -->
+      <div id="whyus">
+        <h2
+          data-aos="fade-up"
+          data-aos-duration="1500"
+          data-aos-easing="ease-in-out"
+        >
+          WHY ATTEND QUIZ
+        </h2>
+        <center>
+          <p
+            style="color: grey; font-size: 20px"
+            data-aos="fade-up"
+            data-aos-duration="1500"
+            data-aos-easing="ease-in-out"
+          >
+            "Unlock Knowledge, Challenge Yourself, and Win Exciting Prizes—Join
+            the Quiz Today!"
+          </p>
+        </center>
+        <br /><br />
+        <div
+          id="cards"
+          class="card-container"
+          data-aos="flip-up"
+          data-aos-duration="1500"
+          data-aos-easing="ease-in-out"
+        ></div>
+      </div>
+      <!-- WHY-US-END -->
+
+      <br /><br /><br /><br />
+
+      <div id="fadescreen"></div>
+
+      <!-- PRIVACY-POLICY-STRT -->
+
+      <div id="privacy-policy">
+        <div class="content">
+          <center><h2>Privacy Policy</h2></center>
+          <p>
+            Welcome to Quizzz. We value your privacy. Here’s how we handle your
+            data:
+          </p>
+
+          <p><strong>1. Information We Collect:</strong></p>
+          <ul style="list-style-type: none">
+            <li>
+              <strong>Personal Info:</strong> Name, email, and contact details.
+            </li>
+            <li>
+              <strong>Usage Data:</strong> How you interact with our quizzes.
+            </li>
+            <li>
+              <strong>Device Info:</strong> IP address, browser type, and device
+              identifiers.
+            </li>
+          </ul>
+          <br />
+          <p><strong>2. How We Use Your Information:</strong></p>
+          <ul style="list-style-type: none">
+            <li>To improve and personalize your experience.</li>
+            <li>To communicate updates and promotional content.</li>
+            <li>To analyze app usage and user behavior.</li>
+          </ul>
+          <br />
+          <p>
+            <strong>4. Security:</strong> We use reasonable measures to protect
+            your data, though no method is completely secure.
+          </p>
+          <br />
+          <button onclick="offpp()">OK</button>
+        </div>
+      </div>
+
+      <!-- PRIVACY-POLICY-END -->
+
+      <!-- TERMS-AND-CONDITIONS-START -->
+      <div id="terms-and-conditions">
+        <div class="content">
+          <center><h2>Terms and Conditions</h2></center>
+          <p>
+            Welcome to Quizzz. By using our service, you agree to the following
+            terms and conditions:
+          </p>
+
+          <p><strong>1. Acceptance of Terms:</strong></p>
+          <ul style="list-style-type: none">
+            <li>
+              By accessing or using our service, you agree to comply with these
+              terms.
+            </li>
+            <li>
+              If you do not agree with any part of these terms, you must not use
+              our service.
+            </li>
+          </ul>
+          <br />
+          <p><strong>2. Use of Service:</strong></p>
+          <ul style="list-style-type: none">
+            <li>You may use our service only for lawful purposes.</li>
+            <li>
+              You must not use the service for any unauthorized or illegal
+              activities.
+            </li>
+          </ul>
+          <br />
+          <p><strong>3. Intellectual Property:</strong></p>
+          <ul style="list-style-type: none">
+            <li>
+              All content and materials on our service are protected by
+              intellectual property laws.
+            </li>
+            <li>
+              You must not reproduce, distribute, or create derivative works
+              without our permission.
+            </li>
+          </ul>
+          <br />
+          <p><strong>4. Limitation of Liability:</strong></p>
+          <ul style="list-style-type: none">
+            <li>
+              We are not liable for any damages arising from your use of the
+              service.
+            </li>
+            <li>Your use of the service is at your own risk.</li>
+          </ul>
+          <br />
+          <button onclick="offTerms()">OK</button>
+        </div>
+      </div>
+      <!-- TERMS-AND-CONDITIONS-END -->
+
+
+      <!-- CONTACT-FORM-START -->
+      <div id="contact-form">
+        <div class="content">
+          <center><h2>Contact Us</h2></center>
+          <div class="form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required />
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required />
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+
+            <div class="buttons">
+              <button type="submit" onclick="onSubmit()">Submit</button>
+              <button onclick="offContactForm()">OK</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- CONTACT-FORM-END -->
+
+      <!-- CONTACT-FORM-END -->
+
+      <!-- FOOTER-START -->
+      <div
+        class="footer"
+        id="footer"
+        data-aos="fade-up"
+        data-aos-duration="1000"
+        data-aos-easing="ease-in-out"
+      >
+        <div
+          class="logo"
+          data-aos="fade-right"
+          data-aos-duration="1500"
+          data-aos-easing="ease-in-out"
+        >
+          <a href="">
+            <img
+              src="https://imgs.search.brave.com/jB4UOJ2VlE-NCakUgcnJFHDAaOvr2ZBkTaT-QxmdGiU/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9weXBp/LWNhbW8uZnJlZXRs/cy5mYXN0bHkubmV0/LzM1Mzc4NTlkYmFj/YzgwNzcxODhiMDIz/MTNiYTkzNzBlMjg3/ZTUyYjAvNjg3NDc0/NzA3MzNhMmYyZjY3/Njk3NDY4NzU2MjJl/NjM2ZjZkMmY3NTZj/NzQ3MjYxNmM3OTc0/Njk2MzczMmY2MTcz/NzM2NTc0NzMyZjcy/NjE3NzJmNmQ2MTY5/NmUyZjcwNjE3Mjc0/NmU2NTcyNzMyZjZj/NmY2NzZmMmQ3MjZm/NjI2ZjY2NmM2Zjc3/MmU3MDZlNjc.jpeg"
+              alt="Company Logo"
+            />
+          </a>
+        </div>
+        <div
+          class="ContactUs"
+          data-aos="fade-up"
+          data-aos-duration="1500"
+          data-aos-easing="ease-in-out"
+        >
+          <h2>Contact Us</h2>
+          <div>
+            <a href="mailto:aswin0526as@gmail.com">
+              <p>aswin0526as@gmail.com</p>
+            </a>
+            <a href="mailto:sec23cs156@sairamtap.edu.in">
+              <p>sec23cs156@sairamtap.edu.in</p>
+            </a>
+          </div>
+          <a href="tel:+9176841369">
+            <p>+91-9176841369</p>
+          </a>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d248755.79476108935!2d80.0441981001022!3d13.047807812651742!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5265ea4f7d3361%3A0x6e61a70b6863d433!2sChennai%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1722604513733!5m2!1sen!2sin"
+            width="300"
+            height="200"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+        <div
+          class="Company"
+          data-aos="fade-up"
+          data-aos-duration="1500"
+          data-aos-easing="ease-in-out"
+        >
+          <h2>Company</h2>
+          <div class="links">
+            <a onclick="showContactForm()"><p>Contact</p></a>
+            <a href="#whyus"><p>Why Us</p></a>
+            <a onclick="onpp()"><p>Privacy Policy</p></a>
+            <a onclick="showTerms()"><p>Terms & Conditions</p></a>
+          </div>
+        </div>
+        <div
+          class="SocialMedia"
+          data-aos="fade-left"
+          data-aos-duration="1500"
+          data-aos-easing="ease-in-out"
+        >
+          <h2>Social Media</h2>
+          <div class="logos">
+            <div class="sec1">
+              <i class="bx bxl-facebook-circle"></i>
+              <a href="https://www.linkedin.com/in/a-aswin/"
+                ><i class="bx bxl-linkedin"></i
+              ></a>
+              <i class="bx bxl-instagram-alt"></i>
+            </div>
+            <div class="sec2">
+              <i class="bx bxl-twitter"></i>
+              <i class="bx bxl-snapchat"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- FOOTER-END -->
+    </div>
+
+    <script>
+      function onpp() {
+        document.getElementById("fadescreen").style.display = "block";
+        document.getElementById("privacy-policy").style.display = "flex";
+      }
+
+      function offpp() {
+        document.getElementById("fadescreen").style.display = "none";
+        document.getElementById("privacy-policy").style.display = "none";
+      }
+
+      function offTerms() {
+        document.getElementById("terms-and-conditions").style.display = "none";
+        document.getElementById("fadescreen").style.display = "none";
+      }
+
+      function showTerms() {
+        document.getElementById("terms-and-conditions").style.display = "flex";
+        document.getElementById("fadescreen").style.display = "block";
+      }
+
+      function offContactForm() {
+        document.getElementById("contact-form").style.display = "none";
+        document.getElementById("fadescreen").style.display = "none";
+      }
+
+      function showContactForm() {
+        document.getElementById("contact-form").style.display = "flex";
+        document.getElementById("fadescreen").style.display = "block";
+      }
+
+      function onSubmit() {
+        let name = document.getElementById("name").value;
+        let email = document.getElementById("email").value;
+        let message = document.getElementById("message").value;
+
+        let dict = {
+          name: name,
+          email: email,
+          message: message,
+        };
+        console.log(dict);
+        alert("submitted");
+        document.getElementById("name").value = "";
+        document.getElementById("email").value = "";
+        document.getElementById("message").value = "";
+
+        fetch("http://localhost:5000/contact-form", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(dict),
+        });
+      }
+
+      fetch("./whyus.json")
+        .then((res) => res.json())
+        .then((data) => {
+          const cardsContainer = document.getElementById("cards");
+          let cardsHtml = "";
+          data.whyus.forEach((card) => {
+            cardsHtml += `
+                        <div class="card">
+                            <img src="${card.imgPath}" alt="Card image" />
+                            <p>${card.description}</p>
+                        </div>
+                    `;
+          });
+          cardsContainer.innerHTML = cardsHtml;
+        })
+        .catch((err) => console.error("Failed to fetch data", err));
+
+      AOS.init();
+    </script>
+  </body>
+</html>

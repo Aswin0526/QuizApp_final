@@ -1,0 +1,587 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+}
+
+/* HEADER-START */
+
+.header {
+    width: 100%;
+    background: white;
+    position: fixed;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+    height: auto;
+    padding: 10px 20px;
+    z-index: 1000;
+}
+
+.header .logo a {
+    width: 100px;
+    height: auto;
+}
+
+.header .logo a img {
+    width: 100px;
+    height: auto;
+}
+
+.navbar {
+    width: 100%;
+}
+
+.navbar ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+    padding: 0;
+}
+
+.navbar ul li {
+    display: inline-block;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: grey;
+    position: relative;
+    padding: 10px 0;
+    font-weight: 500;
+    transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.navbar ul li a:hover {
+    color: rgb(89, 1, 89);
+    transform: scale(1.05);
+}
+
+.navbar ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: rgb(89, 1, 89);
+    transform: scaleX(0);
+    transition: transform 0.3s ease-in-out;
+}
+
+.navbar ul li a:hover::after {
+    transform: scaleX(1);
+}
+
+/* HEADER-END */
+
+/* BANNER-START */
+
+.banner {
+    background: linear-gradient(to bottom, #ffffff, rgb(89, 1, 89));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px;
+    height: 400px;
+    border-bottom: 5px solid rgb(89, 1, 89);
+}
+
+.banner .headlines {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+}
+
+.banner .headlines h1 {
+    color: white;
+    font-size: 2.5rem;
+    margin: 0;
+    font-weight: 700;
+}
+
+.banner .headlines button {
+    width: 140px;
+    height: 50px;
+    padding: 15px;
+    color: white;
+    background: linear-gradient(125deg,rgb(89, 1, 89), rgb(165, 48, 165));
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: background 0.3s ease-in-out, transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.banner .headlines button a {
+    color: white;
+    text-decoration: none;
+}
+
+.banner .headlines button:hover {
+    background: linear-gradient(125deg, rgb(165, 48, 165), rgb(89, 1, 89));
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* BANNER-END */
+
+/* WHY-US-START */
+
+.content #whyus {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 60px 20px;
+}
+
+.content #whyus h2 {
+    color: rgb(89, 1, 89);
+    font-size: 2rem;
+    letter-spacing: 8px;
+    margin-bottom: 40px;
+    font-weight: 700;
+}
+
+.content #whyus #cards {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.content #whyus #cards .card {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 250px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.content #whyus #cards .card img {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid #ddd;
+}
+
+.content #whyus #cards .card p.description {
+    margin-top: 20px;
+    color: rgb(81, 3, 81);
+    font-size: 14px;
+    line-height: 1.6;
+    text-align: center;
+    font-weight: 600;
+}
+
+.content #whyus #cards .card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgb(245, 180, 245);
+}
+
+/* WHY-US-END */
+
+#fadescreen {
+    display: none;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.526);
+    top: 0;
+    left: 0;
+    position: fixed;
+    z-index: 3000;
+}
+
+/* PRIVACY-START */
+
+#privacy-policy {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    z-index: 4000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; 
+}
+
+#privacy-policy .content {
+    width: 90%; 
+    max-width: 800px;
+    background-color: white;
+    color: black;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    z-index: 4001;
+    height: auto; 
+    overflow-y: auto;
+    position: relative;
+    margin: auto; 
+}
+
+#privacy-policy .content h2 {
+    color: rgb(89, 1, 89);
+    margin-bottom: 20px;
+    font-size: 2rem;
+}
+
+#privacy-policy .content p {
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+#privacy-policy .content button {
+    width: 100px;
+    height: 40px;
+    background: rgb(89, 1, 89);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background 0.3s ease-in-out, transform 0.3s ease-in-out;
+    margin-top: 0px; 
+}
+
+#privacy-policy .content button:hover {
+    background: rgb(165, 48, 165);
+    transform: scale(1.05);
+}
+
+/* PRIVACY-END */
+
+/* TERMS-START */
+
+#terms-and-conditions {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    z-index: 4000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80%; /* Adjust based on your preference */
+}
+
+#terms-and-conditions .content {
+    width: 90%;
+    max-width: 800px;
+    background-color: white;
+    color: black;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    z-index: 4001;
+    height: auto;
+    overflow-y: auto;
+    position: relative;
+    margin: auto;
+}
+
+#terms-and-conditions .content h2 {
+    color: rgb(89, 1, 89);
+    margin-bottom: 20px;
+    font-size: 2rem;
+}
+
+#terms-and-conditions .content p {
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+#terms-and-conditions .content button {
+    width: 100px;
+    height: 40px;
+    background: rgb(89, 1, 89);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+#terms-and-conditions .content button:hover {
+    background: rgb(165, 48, 165);
+    transform: scale(1.05);
+}
+
+
+/* TERMS-END */
+
+/* CONTACT-FORM-START */
+
+#contact-form {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    z-index: 4000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80%;
+}
+
+#contact-form .content {
+    width: 90%;
+    max-width: 800px;
+    background-color: white;
+    color: black;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    z-index: 4001;
+    height: auto;
+    overflow-y: auto;
+    position: relative;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+#contact-form .content .buttons {
+    display: flex;
+    flex-direction: row;
+}
+
+
+#contact-form .content h2 {
+    color: rgb(89, 1, 89);
+    margin-bottom: 20px;
+    font-size: 2rem;
+}
+
+#contact-form .content .form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#contact-form .content .form label {
+    font-weight: bold;
+}
+
+#contact-form .content .form input,
+#contact-form .content .form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+#contact-form .content .form button {
+    width: 100px;
+    height: 40px;
+    background: rgb(89, 1, 89);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background 0.3s ease-in-out, transform 0.3s ease-in-out;
+    margin: 0px 5px 0px 5px;
+}
+
+#contact-form .content .form button:hover {
+    background: rgb(165, 48, 165);
+    transform: scale(1.05);
+}
+
+#contact-form .content .form button {
+    width: 100px;
+    height: 40px;
+    background: rgb(89, 1, 89);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background 0.3s ease-in-out, transform 0.3s ease-in-out;
+    margin-top: 20px;
+    display: inline-block;
+}
+
+/* CONTACT-FORM-END */
+
+/* FOOTER-START */
+
+.content .footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.footer .logo {
+    flex: 1 1 20%;
+    display: flex;
+    justify-content: center;
+}
+
+.footer .logo img {
+    width: 120px;
+    height: auto;
+}
+
+.footer .ContactUs {
+    flex: 1 1 30%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.footer .ContactUs h2 {
+    color: rgb(89, 1, 89);
+}
+
+.footer .ContactUs a {
+    text-decoration: none;
+}
+
+.footer .ContactUs a p {
+    color: grey;
+    transition: color 0.3s ease-in-out;
+}
+
+.footer .ContactUs a p:hover {
+    color: rgb(89, 1, 89);
+}
+
+.footer .Company {
+    flex: 1 1 30%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.footer .Company,.SocialMedia h2 {
+    color: rgb(89, 1, 89);
+}
+
+.footer .Company {
+    list-style: none;
+}
+
+.footer .Company .links a {
+    color: grey;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+.footer .Company .links a:hover {
+    color: rgb(89, 1, 89);
+}
+
+.footer .SocialMedia {
+    flex: 1 1 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.footer .SocialMedia .logos {
+    display: flex;
+    gap: 15px;
+}
+
+.footer .SocialMedia .logos i {
+    font-size: 32px;
+    color: grey;
+    transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.footer .SocialMedia .logos i:hover {
+    color: rgb(89, 1, 89);
+    transform: scale(1.1);
+}
+
+/* FOOTER-END */
+
+/* OVERLAY-START */
+
+#overlay {
+    display: none;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+#overlay .content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.7);
+}
+
+#overlay .content .message {
+    color: white;
+    font-size: 2rem;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+#overlay .content button {
+    margin-top: 20px;
+    background: rgb(89, 1, 89);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+#overlay .content button:hover {
+    background: rgb(165, 48, 165);
+}
+
+/* OVERLAY-END */

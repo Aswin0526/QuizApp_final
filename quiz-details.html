@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quizzz</title>
+    <link rel="stylesheet" href="quiz-details.css" />
+    <script>
+      let correctAnswers = []; // Array to store correct answers
+
+      function fetchQuizDetails() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const quizId = urlParams.get("id");
+
+        if (!quizId) {
+          alert("Quiz ID is missing");
+          return;
+        }
+
+        fetch(`http://localhost:5000/quiz/${quizId}`)
+          .then((response) => response.json())
+          .then((data) => {
+            // Store correct answers
+            correctAnswers = data.questions.map((q) => q.answer);
+
+            // Display quiz questions as a form
+            const quizContainer = document.getElementById("quiz-container");
+            let htmlContent = `
+            <h1>${data.title}</h1>
+            <form id="quiz-form">
+              <img src='https://imgs.search.brave.com/1fo3GutBwcY45fua2ENpYhhJT8HeA2Ux1oMN6gBtZfU/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzAyLzMwLzMwLzcw/LzM2MF9GXzIzMDMw/NzA2MV9XM0FBT2hl/eGtRakZnand4MEFo/ZmZhVmk1VlFjdnBI/SS5qcGc' />
+          `;
+
+            data.questions.forEach((q, index) => {
+              htmlContent += `
+              <div class="question">
+                <h2>Question ${index + 1}</h2>
+                <p>${q.question}</p>
+                <div class="options">
+                  ${q.options
+                    .map(
+                      (option) => `
+                        <label>
+                          <input type="radio" name="question${index}" value="${option}" />
+                          ${option}
+                        </label>
+                    `
+                    )
+                    .join("")}
+                </div>
+              </div>
+            `;
+            });
+
+            htmlContent += `
+            <button type="submit" class="submit-btn">Submit</button>
+          </form>`;
+
+            quizContainer.innerHTML = htmlContent;
+
+            // Add event listener for form submission
+            document
+              .getElementById("quiz-form")
+              .addEventListener("submit", function (event) {
+                event.preventDefault(); // Prevent default form submission
+                submitQuiz(); // Call the submit function
+              });
+          })
+          .catch((err) => console.error(err));
+      }
+
+      function submitQuiz() {
+        const formData = new FormData(document.getElementById("quiz-form"));
+        const userAnswers = {};
+        let marks = 0;
+
+        formData.forEach((value, key) => {
+          const questionIndex = key.replace("question", "");
+          userAnswers[questionIndex] = value;
+        });
+
+        console.log("Submitted Answers:", userAnswers);
+        console.log("Correct Answers:", correctAnswers);
+
+        correctAnswers.forEach((answer, index) => {
+          if (userAnswers[index] === answer) {
+            marks += 1;
+          }
+        });
+
+        console.log("Total Marks:", marks);
+
+        // Display fadescreen and show marks
+        document.getElementById("fadescreen").style.display = "block";
+        document.getElementById("showmarks").style.display = "flex";
+
+        // Make sure #Score is being updated
+        const scoreElement = document.getElementById("Score");
+        if (scoreElement) {
+          scoreElement.textContent = `Your Score: ${marks}`;
+        } else {
+          console.error("Score element not found.");
+        }
+      }
+
+      function turnoff(){
+        document.getElementById('fadescreen').style.display='none'
+        document.getElementById('showmarks').style.display='none'
+      }
+
+      window.onload = fetchQuizDetails;
+    </script>
+  </head>
+  <body>
+    <div id="quiz-container" class="container"></div>
+
+    <div id="fadescreen"></div>
+
+    <div id="showmarks">
+      <div class="card">
+        <img
+          src="https://imgs.search.brave.com/jB4UOJ2VlE-NCakUgcnJFHDAaOvr2ZBkTaT-QxmdGiU/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9weXBp/LWNhbW8uZnJlZXRs/cy5mYXN0bHkubmV0/LzM1Mzc4NTlkYmFj/YzgwNzcxODhiMDIz/MTNiYTkzNzBlMjg3/ZTUyYjAvNjg3NDc0/NzA3MzNhMmYyZjY3/Njk3NDY4NzU2MjJl/NjM2ZjZkMmY3NTZj/NzQ3MjYxNmM3OTc0/Njk2MzczMmY2MTcz/NzM2NTc0NzMyZjcy/NjE3NzJmNmQ2MTY5/NmUyZjcwNjE3Mjc0/NmU2NTcyNzMyZjZj/NmY2NzZmMmQ3MjZm/NjI2ZjY2NmM2Zjc3/MmU3MDZlNjc.jpeg"
+          alt=""
+        />
+        <p id="Score"></p>
+        <button id="ok" onclick="turnoff()"><p>OK</p></button>
+      </div>
+    </div>
+  </body>
+</html>

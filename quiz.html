@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz Page</title>
+    <link rel="stylesheet" href="quiz.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  </head>
+  <body>
+    <!-- HEADER-START -->
+    <header
+      class="header"
+      data-aos="fade-down"
+      data-aos-duration="1000"
+      data-aos-easing="ease-in-out"
+    >
+      <div class="logo">
+        <a href="#">
+          <img
+            src="https://imgs.search.brave.com/jB4UOJ2VlE-NCakUgcnJFHDAaOvr2ZBkTaT-QxmdGiU/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9weXBp/LWNhbW8uZnJlZXRs/cy5mYXN0bHkubmV0/LzM1Mzc4NTlkYmFj/YzgwNzcxODhiMDIz/MTNiYTkzNzBlMjg3/ZTUyYjAvNjg3NDc0/NzA3MzNhMmYyZjY3/Njk3NDY4NzU2MjJl/NjM2ZjZkMmY3NTZj/NzQ3MjYxNmM3OTc0/Njk2MzczMmY2MTcz/NzM2NTc0NzMyZjcy/NjE3NzJmNmQ2MTY5/NmUyZjcwNjE3Mjc0/NmU2NTcyNzMyZjZj/NmY2NzZmMmQ3MjZm/NjI2ZjY2NmM2Zjc3/MmU3MDZlNjc.jpeg"
+            alt="Logo"
+          />
+        </a>
+      </div>
+      <nav class="navbar">
+        <ul>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="">About Us</a></li>
+          <li><a href="home.html#whyus">Why Us</a></li>
+          <li><a href="#">Quizzes</a></li>
+          <li><a href="home.html#footer">Contact Us</a></li>
+        </ul>
+      </nav>
+    </header>
+    <!-- HEADER-END -->
+
+    <div style="margin-top: 180px"></div>
+
+    <!-- SEARCH-BAR-START -->
+
+    <div class="search-bar">
+      <div class="form">
+        <input
+          type="text"
+          name="title"
+          id="title"
+          placeholder="SEARCH QUIZ BY TITLE-"
+        />
+        <input
+          type="text"
+          name="quizid"
+          id="quizid"
+          placeholder="SEARCH QUIZ BY ID-"
+        />
+        <button name="search" id="search">Search</button>
+      </div>
+    </div>
+
+    <!-- SEARCH-BAR-END -->
+
+    <!-- QUIZES-START -->
+
+    <div id="quizes"></div>
+
+    <!-- QUIZES-END -->
+
+    <script>
+      let quizData = [];
+
+      // Fetch and display quiz cards
+      function fetchQuizzes() {
+        fetch("quizcard.json")
+          .then((res) => res.json())
+          .then((res) => {
+            quizData = res.quizcard;
+            displayQuizzes(quizData);
+          })
+          .catch((err) => console.log(err));
+      }
+
+      // Display quiz cards
+      function displayQuizzes(data) {
+        let row = "";
+        data.forEach((element) => {
+          row += `<div class='quiz'><img src=${element.image} /><h3>${element.title}</h3><p>${element.description}</p><button><a href=${element.href}>Attend</a></button></div>`;
+        });
+
+        document.getElementById("quizes").innerHTML = row;
+        AOS.init();
+      }
+
+      // Search functionality
+      function searchQuizzes() {
+        const title = document.getElementById("title").value.toLowerCase();
+        const quizid = document.getElementById("quizid").value.toLowerCase();
+
+        const filteredData = quizData.filter((quiz) => {
+          const matchesTitle = title
+            ? quiz.title.toLowerCase().includes(title)
+            : true;
+          const matchesId = quizid ? quiz.href.includes(quizid) : true;
+          return matchesTitle && matchesId;
+        });
+
+        displayQuizzes(filteredData);
+      }
+
+      // Event listener for the search button
+      document
+        .getElementById("search")
+        .addEventListener("click", searchQuizzes);
+
+      // Initial fetch
+      fetchQuizzes();
+    </script>
+  </body>
+</html>

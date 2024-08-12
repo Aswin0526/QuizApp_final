@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="home.css" />
+  <link href="https://unpkg.com/boxicons@latest/css/boxicons.min.css" rel="stylesheet" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      background-color: #f4f4f4;
+    }
+
+    /* HEADER-START */
+
+    .header {
+      width: 100%;
+      background-color: white;
+      position: fixed;
+      top: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.1);
+      height: 148px;
+      z-index: 1000;
+    }
+
+    .header .logo a {
+      width: 90px;
+      height: 90px;
+    }
+
+    .header .logo a img {
+      width: 90px;
+      height: 90px;
+    }
+
+    .navbar {
+      width: 100%;
+    }
+
+    .navbar ul {
+      list-style-type: none;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      width: 100%;
+      padding: 0;
+    }
+
+    .navbar ul li {
+      display: inline-block;
+    }
+
+    .navbar ul li a {
+      text-decoration: none;
+      color: grey;
+      position: relative;
+      padding: 10px 0;
+      font-weight: 500;
+      transition: color 0.3s ease-in-out;
+    }
+
+    .navbar ul li a:hover {
+      color: rgb(89, 1, 89);
+    }
+
+    .navbar ul li a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: rgb(89, 1, 89);
+      transform: scaleX(0);
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .navbar ul li a:hover::after {
+      transform: scaleX(1);
+    }
+
+    /* HEADER-END */
+
+    /* WHY-US-START */
+
+    .content #whyus {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      padding: 60px 20px;
+      margin-top: 170px; /* Adjusted margin for spacing */
+    }
+
+    .content #whyus h2 {
+      color: rgb(89, 1, 89);
+      font-size: 40px;
+      letter-spacing: 8px;
+      margin-bottom: 40px;
+    }
+
+    .content #whyus #cards {
+      width: 90%;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .content #whyus #cards .card {
+      background-color: white;
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      width: 250px;
+      text-align: center;
+      transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 20px;
+    }
+
+    .content #whyus #cards .card img {
+      width: 100%;
+      height: auto;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .content #whyus #cards .card p.description {
+      margin-top: 20px; 
+      color: rgb(81, 3, 81);
+      font-size: 14px;
+      line-height: 1.6;
+      text-align: center;
+      font-weight: bolder;
+    }
+
+    .content #whyus #cards .card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 15px rgb(245, 180, 245);
+    }
+
+    /* CONTACT-US-START */
+
+    .contact {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 50px 0;
+    }
+
+    .contact-form {
+      width: 90%;
+      max-width: 900px;
+      background-color: #ffffff;
+      box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+      border-radius: 8px;
+      padding: 30px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .contact-form h2 {
+      margin-bottom: 20px;
+      color: #6a0dad;
+      text-align: center;
+      font-size: 24px;
+    }
+
+    .formandimg {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      width: 100%;
+    }
+
+    .form {
+      flex: 1 1 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      max-width: 500px;
+    }
+
+    .form input {
+      width: 100%;
+      padding: 15px;
+      border: 1px solid #dcdcdc;
+      border-radius: 4px;
+      font-size: 16px;
+      transition: border-color 0.3s ease;
+    }
+
+    .form input:focus {
+      border-color: #6a0dad;
+      outline: none;
+      box-shadow: 0 0 4px #6a0dad;
+    }
+
+    .form button {
+      padding: 15px;
+      border: 1px solid #6a0dad;
+      border-radius: 4px;
+      background-color: #ffffff;
+      color: #6a0dad;
+      font-size: 16px;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      font-weight: bold;
+      transition: color 0.3s ease, background-color 0.3s ease;
+    }
+
+    .form button::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #6a0dad;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s ease-in-out;
+      z-index: 0;
+    }
+
+    .form button:hover::before {
+      transform: scaleX(1);
+    }
+
+    .form button:hover {
+      color: #ffffff;
+    }
+
+    .form button span {
+      position: relative;
+      z-index: 1;
+    }
+
+    .img {
+      flex: 1 1 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .img img {
+      width: 100%;
+      max-width: 400px;
+      object-fit: contain;
+    }
+
+    @media (min-width: 600px) {
+      .formandimg {
+        flex-direction: row;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .formandimg {
+        flex-direction: column;
+      }
+    }
+
+    /* FOOTER-START */
+
+    .footer {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      padding: 40px 20px;
+      background-color: #f9f9f9;
+      box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .footer .logo {
+      flex: 1 1 20%;
+      display: flex;
+      justify-content: center;
+    }
+
+    .footer .logo img {
+      width: 120px;
+      height: auto;
+    }
+
+    .footer .ContactUs {
+      flex: 1 1 30%;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .footer .ContactUs h2 {
+      font-size: 20px;
+      color: #6a0dad;
+    }
+
+    .footer .ContactUs p {
+      font-size: 14px;
+      color: #333;
+    }
+
+    .footer .ContactUs a {
+      color: #6a0dad;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .footer .ContactUs a:hover {
+      text-decoration: underline;
+    }
+
+    .footer .social-icons {
+      flex: 1 1 20%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .footer .social-icons a {
+      color: #6a0dad;
+      font-size: 24px;
+      transition: color 0.3s ease;
+    }
+
+    .footer .social-icons a:hover {
+      color: #4a0d8e;
+    }
+
+    @media (max-width: 768px) {
+      .footer {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .footer .logo, .footer .ContactUs, .footer .social-icons {
+        flex: 1 1 100%;
+        text-align: center;
+      }
+    }
+    
+    /* FOOTER-END */
+  </style>
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="header">
+    <div class="logo">
+      <a href="#"><img src="logo.png" alt="Logo" /></a>
+    </div>
+    <nav class="navbar">
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#services">Services</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- HOME CONTENT -->
+  <div class="content">
+    <section id="whyus">
+      <h2>Why Us?</h2>
+      <div id="cards">
+        <div class="card">
+          <img src="card1.jpg" alt="Card 1" />
+          <p class="description">Card 1 Description</p>
+        </div>
+        <div class="card">
+          <img src="card2.jpg" alt="Card 2" />
+          <p class="description">Card 2 Description</p>
+        </div>
+        <div class="card">
+          <img src="card3.jpg" alt="Card 3" />
+          <p class="description">Card 3 Description</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- CONTACT FORM -->
+  <section class="contact">
+    <div class="contact-form">
+      <h2>Contact Us</h2>
+      <div class="formandimg">
+        <div class="form">
+          <input type="text" placeholder="Name" />
+          <input type="email" placeholder="Email" />
+          <input type="text" placeholder="Subject" />
+          <textarea placeholder="Message"></textarea>
+          <button><span>Send</span></button>
+        </div>
+        <div class="img">
+          <img src="contact-image.jpg" alt="Contact Us" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="logo">
+      <img src="footer-logo.png" alt="Footer Logo" />
+    </div>
+    <div class="ContactUs">
+      <h2>Contact Us</h2>
+      <p>Address: 1234 Street Name, City, Country</p>
+      <p>Email: contact@domain.com</p>
+      <p>Phone: +1234567890</p>
+      <a href="#">Get in Touch</a>
+    </div>
+    <div class="social-icons">
+      <a href="#"><i class='bx bxl-facebook'></i></a>
+      <a href="#"><i class='bx bxl-twitter'></i></a>
+      <a href="#"><i class='bx bxl-linkedin'></i></a>
+      <a href="#"><i class='bx bxl-instagram'></i></a>
+    </div>
+  </footer>
+</body>
+</html>

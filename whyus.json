@@ -1,0 +1,26 @@
+{
+"whyus" : [
+    {
+      "id": 1,
+      "imgPath": "https://imgs.search.brave.com/WelyXor7AcseIqY2QWuEZEptIGpf-gFsF_Y3mpgWVRk/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzAwLzkyLzgwLzA4/LzM2MF9GXzkyODAw/ODQwX0ZrcVJhNGlD/MzlzdHFKN3hUUnJn/NUZaT1dWd3RuS2Fz/LmpwZw",
+      "description": "Critical Thinking"
+    },
+    {
+      "id": 2,
+      "imgPath": "https://imgs.search.brave.com/HYs9RenmpI9hd0qguGCbVXbEXtX5c0t4IGmT2RWBHmI/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5saWNkbi5jb20v/ZG1zL2ltYWdlL0Q1/NjEyQVFFWHNLTlI2/aXVkQ0EvYXJ0aWNs/ZS1jb3Zlcl9pbWFn/ZS1zaHJpbmtfNzIw/XzEyODAvMC8xNjgw/NTExODM0NDcwP2U9/MjE0NzQ4MzY0NyZ2/PWJldGEmdD1zemp1/RlpCc0o3UUJnUVVf/bjRXY09pc1hfRElB/dFdIbXZvZUhLRV9S/MUF3.jpeg",
+      "description": "Engagement and Motivation"
+    },
+    {
+      "id": 3,
+      "imgPath": "https://imgs.search.brave.com/3ITnffQiPf7ZeNQOZ1DLSUhhGQbOQ_A00sB3f-ibRdU/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly90aHVt/YnMuZHJlYW1zdGlt/ZS5jb20vYi90ZWFt/LTExMzI2ODIzLmpw/Zw",
+      "description": "Enhanced Cognitive Growth"
+    },
+    {
+      "id": 4,
+      "imgPath": "https://imgs.search.brave.com/8bvR_3t5WMJdG2_7k47-hLizeuyeZk_3rqo3uGCoaiI/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/cHJlbWl1bS1waG90/by9pbmZsdWVuY2Vy/LW1hcmtldGluZy1j/YXJ0b29uXzEwNzc4/MDItMzUxNzc2Lmpw/Zw",
+      "description": "Social interaction"
+    }
+  ]
+
+}
+  
