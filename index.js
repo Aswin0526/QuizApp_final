@@ -69,7 +69,7 @@ app.post('/contact-form',(req,res)=>{
   contactModel.create(contactform).then(()=>console.log('Data Registered!')).catch(err => console.log(err))
 })
 
-app.get("/check-email", (req, res) => {
+app.get("/api/check-email", (req, res) => {
   const email = req.params.email;
 
   userModel.findOne({ email: email })
